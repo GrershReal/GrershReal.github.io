@@ -1,0 +1,146 @@
+html {
+    margin:0;
+    padding:0;
+}
+body {
+    padding:0;
+    margin:0;
+    overflow-x:hidden;
+}
+
+h1 { /* Every H1 inside of Class ScrollablePage will now have these properties */
+    width:70%;
+    font-size:60px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    display:block;
+    text-align:center;
+    background-color:rgb(170, 0, 0);
+    padding:0;
+    padding-left:10px;
+    margin:0;
+    margin-top:10px;
+    margin-left:10px;
+    
+    -webkit-text-fill-color:#ffffff;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width:0.1rem;
+    
+    border:#000000;
+    border-radius:10px;
+    border-style:solid;
+
+    position: relative;
+}
+h2 { /* Every H1 inside of Class ScrollablePage will now have these properties */
+    width:min-content;
+    font-size:30px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    display:block;
+    text-align:left;
+    
+    background-color:rgb(170, 0, 0);
+    padding-left:10px;
+    padding-right:10px;
+    
+    margin-top:10px;
+    margin-left:10px;
+    margin-bottom:10px;
+   
+    -webkit-text-fill-color:#ffffff;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width:0.075rem;
+    
+    border:#000000;
+    border-radius:5px;
+    border-style:solid;
+}
+
+p {
+    width:70%;
+    padding:10px;
+
+    margin-left:10px;
+    margin-top:10px;
+    font-size:18px;
+    font-family:Arial, Helvetica, sans-serif;
+    display:block;
+    text-align:left;
+    -webkit-text-fill-color:#ffffff;
+    -webkit-text-stroke-color:#000000;
+    background-color:rgb(170, 0, 0);
+    border:rgba(0, 0, 0, 1);
+    border-radius:10px;
+    border-style:solid;
+}
+a {
+    width: 100%;
+    font-size:20px;
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-text-fill-color:rgb(20, 100, 248);
+    color:rgb(20, 100, 248);;
+}
+a:hover {
+    -webkit-text-fill-color:rgb(143, 170, 219);
+    color:rgb(143, 170, 219);
+}
+a:active {
+    -webkit-text-fill-color:rgb(0, 51, 146);
+    color:rgb(0, 51, 146);;
+}
+   
+/* DOOR ANIMATION */
+#TopDoor {
+    width:100vw;
+    height:50vh;
+    background-color:#ff3333;
+    display:inline;
+    position:fixed;
+    z-index:1;
+}
+
+/* LOGO */
+#Logo {
+    width:20vw;
+    position:fixed;
+    display:inline-block;
+    transform-origin:bottom;
+    transform:translateY(-25vh);
+    top:50vh;
+    left:75vw;
+    z-index:-1000;
+}
+/* BACKDROP */
+#Backdrop {
+    width:110vw;
+    position:fixed;
+    display:inline-block;
+    transform-origin:bottom;
+    transform:translate(-5vw,-5vw);
+    top:0;
+    left:0;
+    z-index:-2000;
+}
+/* BOTTOM BAR */
+#BottomBar { 
+    width:100vw;
+    font-size:30px;
+    margin:0;
+    margin-top:10px;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+
+    position:absolute;
+    bottom:0;
+    display:inline-block;
+    text-align:center;
+    
+    background-color:rgb(230, 0, 0);
+    -webkit-text-fill-color:#ffffff;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width:0.075rem;
+    border:#000000;
+    border-style:solid;
+}
