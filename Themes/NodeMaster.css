@@ -89,15 +89,6 @@ a:active {
     position:fixed;
     z-index:1;
 }
-.HorizontalScroller {
-    width:70%;
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
-    align-items:flex-start;
-    padding-left:10px;
-    gap:10px;
-}
 
 /* LOGO */
 #Logo {

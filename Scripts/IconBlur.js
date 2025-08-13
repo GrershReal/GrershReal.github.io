@@ -1,10 +1,17 @@
 const Thumbnails = document.getElementsByClassName("ProjectThumbnail")
-// document.getElementById("ProjectThumbnail")
 for (let i=0;i<Thumbnails.length;i++){
     const MyThumbnail = Thumbnails[i]
     const MyPageIcon = MyThumbnail.querySelector("img")
     const MyUrl = MyPageIcon.src
-    console.log(MyUrl)
     MyThumbnail.setAttribute("style","background-image:url("+MyUrl+"); background-size:cover;")
-    // Change Background Style in MDN
+    
+    
+    if (!MyThumbnail.querySelector("h3")){ // No heading 3, rescale image to be 100%
+        MyPageIcon.style.width = "100%" 
+        MyPageIcon.style.height = "100%" 
+    }
+    else{
+        MyPageIcon.style.width = "100%" 
+        MyPageIcon.style.height = "140px"
+    }
 }
