@@ -79,16 +79,6 @@ a:active {
     -webkit-text-fill-color:rgb(0, 51, 146);
     color:rgb(0, 51, 146);;
 }
-   
-/* DOOR ANIMATION */
-#TopDoor {
-    width:100vw;
-    height:50vh;
-    background-color:#ff3333;
-    display:inline;
-    position:fixed;
-    z-index:1;
-}
 
 /* LOGO */
 #Logo {
@@ -110,7 +100,7 @@ a:active {
     transform:translate(-5vw,-5vw);
     top:0;
     left:0;
-    z-index:-2000;
+    z-index:-10000;
 }
 /* BOTTOM BAR */
 #BottomBar { 

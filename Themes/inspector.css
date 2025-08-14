@@ -1,0 +1,46 @@
+ 
+#Inspector {
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    display:inline;
+    justify-content:center;
+    align-items:center;
+    /* background-color:#ffffff50; */
+    backdrop-filter:blur(5px);
+    top:0;
+    left:0;
+    z-index:4;
+}
+#Inspector div{
+    width:40vw;
+    height:50vh;
+    position:fixed;
+    display:inline;
+    justify-content:center;
+    align-items:center;
+    top:25vh;
+    left:30vw;
+}
+#InspectorCloseButton {
+    width:10%;
+    position:absolute;
+    z-index:2;
+    left:90%;
+}
+#InspectorViewImage {
+    width:40vw;
+    height:50vh;
+    position:fixed;
+    display:inline;
+    justify-content:center;
+    align-items:center;
+    top:25vh;
+    left:30vw;
+    z-index:5;
+    background-color:#ffffff;
+    border:#000000;
+    border-radius:10px;
+    border-style:solid;
+    z-index:1;
+}

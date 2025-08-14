@@ -105,25 +105,22 @@ a:active {
     width:25vw;
     position:fixed;
     display:inline-block;
-    transform-origin:bottom;
+    transform-origin:center;
     top:25vh;
     left:75vw;
     z-index:-1000;
     /* Animate */
-    animation:spin 2s forwards 0 3;
+    animation:spin 10s linear 0s infinite;
     animation-delay:1s;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     /* animation:spin 2s linear infinite infinite forwards none; */
 }
 @keyframes spin {
     0% {    
-        transform:rotate(90deg);
-    }
-    25% { 
-        transform:rotate(180deg);
+        transform:rotate(0deg);
     }
     50% { 
-        transform:rotate(270deg);
+        transform:rotate(180deg);
     }
     100%{
         transform:rotate(360deg);

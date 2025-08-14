@@ -94,10 +94,17 @@ a:active {
     z-index:1;
     transform-origin:center;
     /* Animate */
-    animation:shake 0s forwards;
-    animation-delay:0s;
+    animation:shakeStart 1s linear 0s 0 forwards, shakeLoop 2s linear 0s 4 forwards;
 }
-@keyframes shake {
+@keyframes shakeStart {
+    0% {    
+        transform:rotate(0);
+    }
+    100% { 
+        transform:rotate(-15deg);
+    }
+}
+@keyframes shakeLoop {
     0% {    
         transform:rotate(-15deg);
     }
