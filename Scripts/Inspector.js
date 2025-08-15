@@ -19,6 +19,7 @@ export function InspectVideo(VideoSource){
 }
 export function CloseInspect(){
     InspectorBack.style.visibility = "hidden"
+    InspectorVideo.pause()
 }
 //
 //InspectorImage.setAttribute("style","src:url("+MyUrl+");")
