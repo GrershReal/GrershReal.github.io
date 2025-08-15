@@ -27,8 +27,13 @@ for (let i=0;i<Thumbnails.length;i++){
 //
 const Logo = document.getElementById("Logo")
 const Animations = Logo.getAnimations()
+let LastLogoClick = 0;
+let RapidClickCount = 0
+let ActiveCooldown = 0
+//
 let shakeStartAnim;
 let shakeLoopAnim;
+let shakeEndAnim;
 console.log(Animations)
 for (let i=0;i<Animations.length;i++){
     console.log(Animations[i])
@@ -38,13 +43,49 @@ for (let i=0;i<Animations.length;i++){
     else if (Animations[i].animationName == "shakeLoop"){
         shakeLoopAnim = Animations[i]
     }
+    else if (Animations[i].animationName == "shakeEnd"){
+        shakeEndAnim = Animations[i]
+    }
 }
 //
 shakeStartAnim.cancel()
 shakeLoopAnim.cancel()
-
-Logo.addEventListener("click",function(){
-    console.log("Play")
-    shakeStartAnim.play()
+shakeEndAnim.cancel()
+// ANIMATION EVENTS
+shakeLoopAnim.addEventListener("finish",function(){
+    shakeEndAnim.play()
 })
-//
+shakeStartAnim.addEventListener("finish",function(){
+    shakeLoopAnim.play()
+})
+// INPUT EVENTS
+Logo.addEventListener("click",function(){
+    if ((performance.now()-LastLogoClick)/1000<ActiveCooldown){ // performance.now returns in MS
+        return
+    }   
+    ActiveCooldown = 0
+    if ((performance.now()-LastLogoClick)/1000<0.25){
+        RapidClickCount+=1
+    }
+    else{
+        RapidClickCount=0
+    }
+    //
+    if (RapidClickCount>4){
+        console.log("RAPID FIRE!!!!")
+        shakeLoopAnim.iterationCount = 60
+        shakeStartAnim.cancel()
+        shakeLoopAnim.cancel()
+        shakeEndAnim.cancel()
+        shakeStartAnim.play()
+        ActiveCooldown = 5
+    }
+    else {
+        shakeLoopAnim.iterationCount = 4
+        shakeStartAnim.cancel()
+        shakeLoopAnim.cancel()
+        shakeEndAnim.cancel()
+        shakeStartAnim.play()
+    }
+    LastLogoClick = performance.now()
+})

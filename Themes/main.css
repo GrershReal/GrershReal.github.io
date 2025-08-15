@@ -94,7 +94,10 @@ a:active {
     z-index:1;
     transform-origin:center;
     /* Animate */
-    animation:shakeStart 1s linear 0s 0 forwards, shakeLoop 2s linear 0s 4 forwards;
+    animation:shakeStart 100ms linear 0s 1  forwards,
+    shakeLoop 200ms linear 0s 2 forwards,
+    shakeEnd 100ms linear 0s 1 forwards;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 @keyframes shakeStart {
     0% {    
@@ -114,6 +117,14 @@ a:active {
     }
     100% { 
         transform:rotate(-15deg);
+    }
+}
+@keyframes shakeEnd {
+    0% {    
+        transform:rotate(-15deg);
+    }
+    100% { 
+        transform:rotate(0deg);
     }
 }
 

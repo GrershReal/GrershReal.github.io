@@ -1,26 +1,32 @@
 export const InspectorBack = document.getElementById("Inspector")
-export const InspectorImage = document.getElementById("InspectorViewImage")
+export const InspectViewer = document.getElementById("InspectViewer")
 export const InspectorCloseButton = document.getElementById("InspectorCloseButton")
+
+export const InspectorImg = InspectViewer.getElementsByTagName("img")[0]
+export const InspectorVideo = InspectViewer.getElementsByTagName("video")[0]
 
 export function InspectImage(ImageSource){
     InspectorBack.style.visibility = "visible"
-    InspectorImage.setAttribute("src",ImageSource)
+    InspectorVideo.style.display = "none"
+    InspectorImg.style.display = "inline"
+    InspectorImg.setAttribute("src",ImageSource)
+}
+export function InspectVideo(VideoSource){
+    InspectorBack.style.visibility = "visible"
+    InspectorImg.style.display = "none"
+    InspectorVideo.style.display = "inline"
+    InspectorVideo.setAttribute("src",VideoSource)
 }
 export function CloseInspect(){
     InspectorBack.style.visibility = "hidden"
 }
 //
 //InspectorImage.setAttribute("style","src:url("+MyUrl+");")
-InspectorImage.setAttribute("style","src:url(../Pictures/Icon_MCG.png );")
+InspectorImg.setAttribute("style","src:url(../Pictures/Icon_MCG.png );")
 InspectorBack.addEventListener("click",function(ClickTarget){
     if (ClickTarget.target == InspectorBack){
         console.log("Exit Click")
         CloseInspect()
-    }
-})
-InspectorImage.addEventListener("click",function(ClickTarget){
-    if (ClickTarget.target == InspectorImage){
-        console.log("Image Click")
     }
 })
 InspectorCloseButton.addEventListener("click",function(ClickTarget){
